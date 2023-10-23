@@ -16,7 +16,9 @@
 This puzzle was invented by Douglas A. Engel and it consists of two intersecting disks in a plastic holder.
 This program is a computer version of this puzzle that I wrote in Python.
 
-![image](EnigmaGame.png)
+
+![image](https://github.com/adiuvaris/EnigmaGame/raw/master/EnigmaGame.png)
+
 
 ## Install
 
