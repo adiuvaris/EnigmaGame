@@ -1,5 +1,5 @@
 
-from src.EnigmaGame.blocks import Blocks
+from EnigmaGame.blocks import Blocks
 
 
 class Figure:

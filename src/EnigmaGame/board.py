@@ -3,9 +3,9 @@ import random
 import time
 from enum import Enum
 
-import src.EnigmaGame.const as const
-from src.EnigmaGame.blocks import Blocks
-from src.EnigmaGame.figure import Figure
+import EnigmaGame.const as const
+from EnigmaGame.blocks import Blocks
+from EnigmaGame.figure import Figure
 
 
 class Disc(Enum):

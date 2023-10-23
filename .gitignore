@@ -1,6 +1,3 @@
-# Tiled Session for Tiled Projects
-*.tiled-session
-
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -62,6 +59,7 @@ coverage.xml
 docs/_build/
 
 # Environments
+.pypirc
 .env
 .venv
 env/

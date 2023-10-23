@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "EnigmaGame"
-version = "1.0.0"
+version = "1.0.3"
 description = "A game as difficult as the Rubik’s cube"
 readme = "README.md"
 authors = [{ name = "Michael Hodel", email = "info@adiuvaris.ch" }]
@@ -25,5 +25,5 @@ requires-python = ">=3.9"
 dev = ["black", "bumpver", "isort", "pip-tools", "pytest", "build", "twine"]
 
 [project.urls]
-Homepage = "https://github.com/adiuvaris/EnigmaPuzzle"
+Homepage = "https://github.com/adiuvaris/EnigmaGame"
 

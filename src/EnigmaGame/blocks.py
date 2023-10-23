@@ -1,6 +1,6 @@
 
-import src.EnigmaGame.const as const
-from src.EnigmaGame.block import Block
+import EnigmaGame.const as const
+from EnigmaGame.block import Block
 
 
 class GameBlocks(object):

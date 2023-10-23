@@ -1,8 +1,8 @@
 
 import arcade
 
-import src.EnigmaGame.const as const
-from src.EnigmaGame.gpath import GPath
+import EnigmaGame.const as const
+from EnigmaGame.gpath import GPath
 
 
 class Block:

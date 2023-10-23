@@ -1,4 +1,4 @@
-# EnigmaPuzzle
+# EnigmaGame
 
 *A game as difficult as the Rubik’s cube*
 
@@ -7,7 +7,7 @@
 * **copyright**   2022-2023 Michael Hodel - Adiuvaris
 * **license**     http://www.gnu.org/copyleft/lesser.html GNU-LGPL v3 (see LICENSE.TXT)
 * **link**        https://adiuvaris.ch
-* **source**      https://github.com/adiuvaris/EnigmaPuzzle
+* **source**      https://github.com/adiuvaris/EnigmaGame
 
 
 ## Description

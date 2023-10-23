@@ -6,10 +6,10 @@ import arcade
 import arcade.gui
 import pyglet.window
 
-from src.EnigmaGame.board import Board
-from src.EnigmaGame.board import Direction
-from src.EnigmaGame.board import Disc
-import src.EnigmaGame.const as const
+from EnigmaGame.board import Board
+from EnigmaGame.board import Direction
+from EnigmaGame.board import Disc
+import EnigmaGame.const as const
 
 
 class MyGame(arcade.Window):
@@ -19,6 +19,7 @@ class MyGame(arcade.Window):
 
         arcade.set_background_color(arcade.color.DIM_GRAY)
 
+        self.scale_factor = height / 1280
         self.board = Board()
         self.turning = 0
         self.coloring = 0
@@ -33,27 +34,27 @@ class MyGame(arcade.Window):
 
         self.v_box = arcade.gui.UIBoxLayout()
 
-        self.time_text = arcade.gui.UILabel(width=240, text=" ", font_size=15)
+        self.time_text = arcade.gui.UILabel(width=240 * self.scale_factor, text=" ", font_size=15 * self.scale_factor)
         self.v_box.add(self.time_text.with_space_around(bottom=30))
 
-        self.moves_text = arcade.gui.UILabel(width=240, text=" ", font_size=15)
-        self.v_box.add(self.moves_text.with_space_around(bottom=30))
+        self.moves_text = arcade.gui.UILabel(width=240 * self.scale_factor, text=" ", font_size=15 * self.scale_factor)
+        self.v_box.add(self.moves_text.with_space_around(bottom=30 * self.scale_factor))
 
-        self.level_text = arcade.gui.UILabel(width=240, text="Level: " + self.board.get_level(), font_size=15)
-        self.v_box.add(self.level_text.with_space_around(bottom=100))
+        self.level_text = arcade.gui.UILabel(width=240 * self.scale_factor, text="Level: " + self.board.get_level(), font_size=15 * self.scale_factor)
+        self.v_box.add(self.level_text.with_space_around(bottom=100 * self.scale_factor))
 
         # Create the buttons
-        start_button = arcade.gui.UIFlatButton(text="Start Game", width=240)
-        self.v_box.add(start_button.with_space_around(bottom=30))
+        start_button = arcade.gui.UIFlatButton(text="Start Game", width=240 * self.scale_factor)
+        self.v_box.add(start_button.with_space_around(bottom=30 * self.scale_factor))
 
-        level_up_button = arcade.gui.UIFlatButton(text="Level Up", width=240)
-        self.v_box.add(level_up_button.with_space_around(bottom=30))
+        level_up_button = arcade.gui.UIFlatButton(text="Level Up", width=240 * self.scale_factor)
+        self.v_box.add(level_up_button.with_space_around(bottom=30 * self.scale_factor))
 
-        level_down_button = arcade.gui.UIFlatButton(text="Level Down", width=240)
-        self.v_box.add(level_down_button.with_space_around(bottom=30))
+        level_down_button = arcade.gui.UIFlatButton(text="Level Down", width=240 * self.scale_factor)
+        self.v_box.add(level_down_button.with_space_around(bottom=30 * self.scale_factor))
 
-        close_button = arcade.gui.UIFlatButton(text="Quit", width=240)
-        self.v_box.add(close_button.with_space_around(bottom=30))
+        close_button = arcade.gui.UIFlatButton(text="Quit", width=240 * self.scale_factor)
+        self.v_box.add(close_button.with_space_around(bottom=30 * self.scale_factor))
 
         start_button.on_click = self.on_click_start
         close_button.on_click = self.on_click_close
@@ -63,8 +64,8 @@ class MyGame(arcade.Window):
         # Create a widget to hold the v_box widget, that will center the buttons
         self.manager.add(
             arcade.gui.UIAnchorWidget(
-                align_x=-80,
-                align_y=-300,
+                align_x=-80 * self.scale_factor,
+                align_y=-300 * self.scale_factor,
                 anchor_x="right",
                 anchor_y="center_y",
                 child=self.v_box)
@@ -90,17 +91,17 @@ class MyGame(arcade.Window):
         self.close()
 
     def setup(self):
-        self.board.on_resize(920, 1200)
+        self.board.on_resize(920 * self.scale_factor, 1200 * self.scale_factor)
         self.on_draw()
 
-        image = arcade.get_image(0, 0, 900, 1150)
+        image = arcade.get_image(0, 0, int(900 * self.scale_factor), int(1150 * self.scale_factor))
         image.save(f"p1_{self.board.level}.png")
         sprite = arcade.Sprite(filename=f"p1_{self.board.level}.png")
 
         if self.widget is not None:
             self.manager.remove(self.widget)
 
-        self.widget = arcade.gui.UISpriteWidget(x=870, y=700, width=414, height=540, sprite=sprite)
+        self.widget = arcade.gui.UISpriteWidget(x=870 * self.scale_factor, y=700 * self.scale_factor, width=414 * self.scale_factor, height=540 * self.scale_factor, sprite=sprite)
         self.manager.add(self.widget)
         self.manager.trigger_render()
         os.remove(f"p1_{self.board.level}.png")
@@ -220,7 +221,8 @@ class MyGame(arcade.Window):
 
 
 def main():
-    game = MyGame(const.SCREEN_WIDTH, const.SCREEN_HEIGHT, const.SCREEN_TITLE)
+    (w, h) = arcade.get_display_size()
+    game = MyGame(int(h * 0.9), int(h * 0.9), const.SCREEN_TITLE)
     game.setup()
     arcade.run()
 
