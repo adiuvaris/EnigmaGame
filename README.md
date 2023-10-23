@@ -16,6 +16,7 @@
 This puzzle was invented by Douglas A. Engel and it consists of two intersecting disks in a plastic holder.
 This program is a computer version of this puzzle that I wrote in Python.
 
+![image](EnigmaGame.png)
 
 ## Install
 
@@ -30,6 +31,21 @@ $ pip install EnigmaGame
 ``` python
 python -m EnigmaGame
 ```
+
+Start a game and turn the upper and lower disk. The goal is to reset the pattern to the example in the right corner.
+
+The rotations can be initiated with an intuitive mouse movement (or on a touch screen with a finger gesture). 
+This requires a mouse click on the appropriate disk and then a mouse move while holding the mouse button pressed. 
+When you release the mouse button, the rotation is executed. With a touch screen you can do that with the finger.
+It is also possible to turn the disks with the left and right cursor keys. 
+If you additionally hold the shift key the upper disk will be rotated.
+
+On the screen you see the actual playing area. It consists of two circular disks that are intersecting each other. 
+On each disk, there are six stones alternating with six bones. The stones look like overweight triangles, 
+the bones as malnourished rectangles. Since the disks are intersecting, they share two stones and a bone. If a disk, 
+let’s say the upper one, is rotated by 60 degrees, then one stone and one bone that had previously also belonged 
+to the lower disk are replaced by a new stone and new bone.
+
 
 
 ## License
