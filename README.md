@@ -3,7 +3,7 @@
 *A game as difficult as the Rubik’s cube*
 
 * **category**    Game, Program
-* **version**     1.0.2
+* **version**     1.0.3
 * **author**      Michael Hodel <info@adiuvaris.ch>
 * **copyright**   2023 Michael Hodel - Adiuvaris
 * **license**     http://www.gnu.org/copyleft/lesser.html GNU-LGPL v3 (see LICENSE.TXT)
